@@ -5,11 +5,11 @@ var now = require('performance-now')
   , raf = root['request' + suffix]
   , caf = root['cancel' + suffix] || root['cancelRequest' + suffix]
 
-for(var i = 0; !raf && i < vendors.length; i++) {
-  raf = root[vendors[i] + 'Request' + suffix]
-  caf = root[vendors[i] + 'Cancel' + suffix]
-      || root[vendors[i] + 'CancelRequest' + suffix]
-}
+// for(var i = 0; !raf && i < vendors.length; i++) {
+//   raf = root[vendors[i] + 'Request' + suffix]
+//   caf = root[vendors[i] + 'Cancel' + suffix]
+//       || root[vendors[i] + 'CancelRequest' + suffix]
+// }
 
 // Some versions of FF have rAF but not cAF
 if(!raf || !caf) {
